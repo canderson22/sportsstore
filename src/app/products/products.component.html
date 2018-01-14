@@ -3,6 +3,17 @@
     categories go here
   </div>
   <div class="col-sm-8">
-    products go here
+    <div class="well"
+          *ngFor="let item of products">
+      <h3>
+        <strong>{{item.name}}</strong>
+        <span class="float-right badge badge-primary">
+          {{item.price | currency}}
+        </span>
+      </h3>
+      <span class="lead">
+        {{item.description}}
+      </span>
+    </div>
   </div>
 </div>
