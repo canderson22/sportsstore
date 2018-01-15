@@ -8,7 +8,8 @@
     <button 
       class="btn btn-block btn-light"
       *ngFor="let item of products | unique: 'category'"
-      (click)="selectCategory(item.category)">
+      (click)="selectCategory(item.category)"
+      [class.btn-dark]="item.category === selectedCategory">
       {{item.category}}
     </button>
   </div>
