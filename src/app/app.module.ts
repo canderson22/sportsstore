@@ -5,12 +5,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
+import { UniquePipe } from './unique.pipe';
+import { CategoryFilterFn } from './categoryFilter.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    UniquePipe,
+    CategoryFilterFn
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,21 @@
 <div class="panel row">
   <div class="col-sm-3">
-    categories go here
+    <button 
+      class="btn btn-block btn-light"
+      (click)="selectCategory('')">
+      Home
+    </button>
+    <button 
+      class="btn btn-block btn-light"
+      *ngFor="let item of products | unique: 'category'"
+      (click)="selectCategory(item.category)">
+      {{item.category}}
+    </button>
   </div>
   <div class="col-sm-8">
-    <div class="well"
-          *ngFor="let item of products">
+    <div 
+      class="well"
+      *ngFor="let item of products | categoryFilterFn: selectedCategory">
       <h3>
         <strong>{{item.name}}</strong>
         <span class="float-right badge badge-primary">

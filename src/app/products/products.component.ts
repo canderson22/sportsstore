@@ -9,6 +9,11 @@ import { PRODUCTS } from '../mock-products';
 })
 export class ProductsComponent implements OnInit {
   products = PRODUCTS;
+  selectedCategory = '';
+
+  selectCategory(category: string): void {
+    this.selectedCategory = category;
+  }
 
   constructor() { }
 
