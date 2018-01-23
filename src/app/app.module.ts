@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination'
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -10,6 +11,9 @@ import { CategoryFilterFn } from './categoryFilter.pipe';
 import { ProductsService } from './products.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +21,17 @@ import { MessageService } from './message.service';
     ProductsComponent,
     UniquePipe,
     CategoryFilterFn,
-    MessagesComponent
+    MessagesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgxPaginationModule,
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [HttpClientModule, ProductsService, MessageService],
+  providers: [HttpClientModule, ProductsService, MessageService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

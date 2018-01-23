@@ -16,7 +16,7 @@
   <div class="col-sm-8">
     <div 
       class="well"
-      *ngFor="let item of products | categoryFilterFn: selectedCategory">
+      *ngFor="let item of products | categoryFilterFn: selectedCategory| paginate: { itemsPerPage: 3, currentPage: page}">
       <h3>
         <strong>{{item.name}}</strong>
         <span class="float-right badge badge-primary">
@@ -27,5 +27,6 @@
         {{item.description}}
       </span>
     </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>

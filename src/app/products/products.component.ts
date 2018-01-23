@@ -9,7 +9,7 @@ import { ProductsService } from '../products.service';
 export class ProductsComponent implements OnInit {
   products: Product[];
   selectedCategory = '';
-  page = 1;
+  page: number = 1;
 
   selectCategory(category: string): void {
     this.selectedCategory = category;
